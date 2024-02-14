@@ -57,34 +57,106 @@ const squares = document.querySelectorAll('.square')
 const canvas = document.querySelector('.canvas')
 
 //palette
-const palette = document.querySelector('.palette')
 const paletteColors = document.querySelectorAll('.palette-color')
 
 //brush
-let paintBrush = document.querySelector('#selected-brush')
+const paintBrush = document.querySelector('.current-brush')
 
-const numOfPaint = 5
-const paintColor = []
-for(let i = 0; i < numOfPaint.length; i++){
-  paintColor.push(`color-${i}`)
+
+function clickSquares(){
+    console.log('functionality test')
+    
 }
 
-paletteColors.addEventListener('click', changeColor())
-// paletteColors.forEach(color => color.addEventListener('click', ()=>{
-//         let newColor = []
-//         newColor.push(color)
-// }))
-// console.log(paletteColors)
+squares.forEach((square) =>{
+    square.addEventListener('click', clickSquares)
+})
+
+
+function clickPaletteColor(){
+  console.log('functionality test')
+}
+
+paletteColors.forEach((color)=>{
+  color.addEventListener('click', clickPaletteColor)
+})
+  
+  // event.target.classList.replace()
 
 
 
 
 
 
-function changeColor(element, currentPaint){
-   paletteColors.forEach(color => element.classList.replace(color, currentPaint))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const numOfPaint = 5
+// const paintColor = []
+// for(let i = 0; i < numOfPaint.length; i++){
+//   paintColor.push(`color-${i}`)
+// }
+
+
+//EVENT LISTENER FOR PALETTE
+
+// paletteColors.forEach(paintColor => {
+//   paintColor.addEventListener('click',()=>{
+//     console.log('palette color received')
+//     const paintColorClass = paletteColors.classList
+//     paintBrush.className = `.current-brush color-${paintColorClass}`
+//   } )
+// })
+
+
+
+
+
+// function changeColor(element, currentPaint){
+  //  paletteColors.forEach(color => element.classList.replace(color, currentPaint))
       // element.classList.add(currentPaint)
- }
+//  }
 
 
 // palette.addEventListener('click', ()=>{
