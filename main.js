@@ -51,92 +51,163 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
-
-//squares 
-const squares = document.querySelectorAll('.square')
-const canvas = document.querySelector('.canvas')
-
-//palette
-const paletteColors = document.querySelectorAll('.palette-color')
-
-//brush
 const paintBrush = document.querySelector('.current-brush')
 
+const squares = document.querySelectorAll('.square')
 
 function clickSquares(){
-    console.log('functionality test')
-    
+  squares.addEventListener('click', ()=>{
+  for(let square of squares){
+    square.event.target.replace('color', 'current-brush')
+  }
+})
 }
+ 
+clickSquares()
 
-squares.forEach((square) =>{
-    square.addEventListener('click', clickSquares)
+const paletteColors = document.querySelector('.palette')
+
+paletteColors.addEventListener('click', ()=>{
+  for(let color of paletteColors){
+    color.event.target.replace('palette-color', 'current-brush')
+  }
 })
 
 
-function clickPaletteColor(){
-  console.log('functionality test')
-}
 
-paletteColors.forEach((color)=>{
-  color.addEventListener('click', clickPaletteColor)
-})
+
+
+//ATTEMPT 3
+// //squares 
+// // const squares = document.querySelectorAll('.square')
+// const canvas = document.querySelector('.canvas')
+
+// //palette
+// const paletteColors = document.querySelectorAll('.palette-color')
+
+// //brush
+// const paintBrush = document.querySelector('.current-brush')
+
+
+
+// function paintColor(element){
+//     return element.classList[1]
+// }
+
+
+
+// const squares = []
+// for(let i = 0; i < canvas.length; i++){
+//   squares.push(canvas[i])
+// }
+
+// squares.forEach((square) =>{
+//     square.addEventListener('click', (event)=>{
+//       const squareCanvas = event.target
+//       squareCanvas.classList.replace(paintColor(squareCanvas), paintColor(paintBrush))
+//     })
+// })
+
+
+
+// paletteColors.forEach((color)=>{
+//   color.addEventListener('click', (event) => {
+//     paintBrush = event.target.replace(paintColor(paintBrush))
+//   })
+// })
   
   // event.target.classList.replace()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const numOfPaint = 5
-// const paintColor = []
-// for(let i = 0; i < numOfPaint.length; i++){
-//   paintColor.push(`color-${i}`)
+// function clickSquares(){
+//     console.log('functionality test')
+    
 // }
+
+// function clickPaletteColor(){
+//   console.log('functionality test')
+// }
+
+// function brushClick(){
+// paintBrush.addEventListener('click', (event)=>{
+//   const brushTarget = event.target
+//   const colorClass = paintBrush.getAttribute('color')
+//   brushTarget.setAttribute('color', colorClass)
+//   console.log('click works')
+// })
+// }
+
+// console.log(brushClick(squares))
+
+
+
+
+
+//ATTEMPT 2
+
+// //squares 
+// const squares = document.querySelectorAll('.square')
+// const canvas = document.querySelector('.canvas')
+
+// //palette
+// const paletteColors = document.querySelectorAll('.palette-color')
+
+// //brush
+// const paintBrush = document.querySelector('.brush')
+
+// //create an array to hold colors for index and define i for template literals
+// const numOfPaint = 5
+// const paintColors = []
+
+// function defineI(){
+//   for(let i = 0; i < numOfPaint.length; i++){
+//   paintColors.push(`color-${i}`)
+// }
+// }
+
+// let i = defineI()
+
+// const brushColor = document.querySelector(`current-brush color-${i}`)
+
+
+
+// function brushClick(){
+// paintBrush.addEventListener('click', (event)=>{
+//   const brushTarget = event.target
+//   const colorClass = paintBrush.getAttribute('color')
+//   brushTarget.setAttribute('color', colorClass)
+//   console.log('click works')
+// })
+// }
+
+// console.log(brushClick())
+
+// function clickSquares(){
+//     console.log('functionality test')
+    
+// }
+
+// squares.forEach((square) =>{
+//     square.addEventListener('click', (event)=>{
+//       event.target.classList.replace('color', brushColor)
+//     })
+// })
+
+
+// function clickPaletteColor(){
+//   console.log('functionality test')
+// }
+
+// paletteColors.forEach((color)=>{
+//   color.addEventListener('click', (event)=>{
+//     brushColor = event.target.remove('color')
+//     brushColor = event.target.add(brushColor)
+//   })
+// })
+  
+
+
+
+//ATTEMPT 1
 
 
 //EVENT LISTENER FOR PALETTE
@@ -191,17 +262,6 @@ paletteColors.forEach((color)=>{
 // console.log(changeColor())
 //event listener functions
 
-
-/****************************
- * EVENT LISTENER FUNCTIONS *
-****************************/
-
-// Now add some functions to handle clicking one particular square
-// and clicking one particular palette color. You can leave them
-// empty at first, though a console.log just to know they're being
-// run as event listeners (after the next step is set up) isn't a
-// bad idea for testing purposes.
-
 //.replace
 
 
@@ -220,6 +280,17 @@ paletteColors.forEach((color)=>{
 // function clickedPaletteColor(color){
 //   color.classList.replace('')
 // }
+
+/****************************
+ * EVENT LISTENER FUNCTIONS *
+****************************/
+
+// Now add some functions to handle clicking one particular square
+// and clicking one particular palette color. You can leave them
+// empty at first, though a console.log just to know they're being
+// run as event listeners (after the next step is set up) isn't a
+// bad idea for testing purposes.
+
 
 
 
