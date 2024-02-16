@@ -51,27 +51,77 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
-const paintBrush = document.querySelector('.current-brush')
+//build an array for all the names of classes using 'colors'
+//hard code an array --> [color 1, color 2, etc..]
+//every time square click, loop through array --> remove class when clicked
+//remove function
 
-const squares = document.querySelectorAll('.square')
+const paintBrush = document.querySelector('#current-brush')
 
-function clickSquares(){
-  squares.addEventListener('click', ()=>{
+
+const squares = document.querySelectorAll('.square')  //big arr of all squares, individually access squares
+
+const paletteColors = document.querySelectorAll('.palette-color')
+
+const colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5']
+
   for(let square of squares){
-    square.event.target.replace('color', 'current-brush')
-  }
-})
+    square.addEventListener('click', (event)=>{
+      for(let color of colors){
+        event.target.classList.remove(color) 
+      }  
+      event.target.classList.add(paintBrush.classList[0])
+        
+    })
 }
- 
-clickSquares()
 
-const paletteColors = document.querySelector('.palette')
 
-paletteColors.addEventListener('click', ()=>{
-  for(let color of paletteColors){
-    color.event.target.replace('palette-color', 'current-brush')
-  }
+paletteColors.forEach((color) => {
+  color.addEventListener('click', (event)=>{
+    for(let color of colors){
+    paintBrush.classList.remove(color)}
+    console.log(event.target.classList)
+  paintBrush.classList.add(event.target.classList[1])
+  console.log(event.target)  
 })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const paletteColors = document.querySelector('.palette')
+
+// paletteColors.addEventListener('click', ()=>{
+//   for(let color of paletteColors){
+//     color.event.target.replace('palette-color', 'current-brush')
+//   }
+// })
 
 
 
