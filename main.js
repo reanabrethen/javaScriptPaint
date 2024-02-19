@@ -17,12 +17,12 @@
  */
 
 
-const gridWidth = 10;
+const gridWidth = 20;
 let count = 0;
 while (count <= gridWidth * gridWidth) {
   const canvas = document.querySelector('.canvas');
   const div = document.createElement('div');
-  div.className = 'square color-5';
+  div.className = 'square color-11';
   canvas.appendChild(div);
   count++;
 }
@@ -63,7 +63,15 @@ const squares = document.querySelectorAll('.square')  //big arr of all squares, 
 
 const paletteColors = document.querySelectorAll('.palette-color')
 
-const colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5']
+const colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 
+                'color-6', 'color-7', 'color-8', 'color-9', 'color-10', 'color-11']
+
+
+// function mouseOver(squares){
+//     squares.addEventListener()
+// }
+
+
 
   for(let square of squares){
     square.addEventListener('click', (event)=>{
@@ -82,12 +90,19 @@ paletteColors.forEach((color) => {
     paintBrush.classList.remove(color)}
     console.log(event.target.classList)
   paintBrush.classList.add(event.target.classList[1])
-  console.log(event.target)  
 })
 })
 
 
 
+//STRETCH GOALS
+
+const darkMode = document.querySelector('#dark-mode-toggle')
+
+darkMode.addEventListener('click', ()=>{
+  console.log('functionality')
+  document.body.classList.toggle('dark-mode')
+})
 
 
 
